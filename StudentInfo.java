@@ -1,11 +1,14 @@
 // Mini Project: Student Information & Marks Processing System
 import java.util.Scanner;
+
 class Student{
 
             String name , department;
             int roll , age , numOfSubjects;
+            double tamil,eng,maths,sci,soc,total,average;
             char gender;
 
+        // Getting the Basic Informations of the student
         public static void getStudentsBasicInfo(Scanner scanner , Student objStudent){
 
              System.out.print("Enter the Name of the Student: ");
@@ -24,7 +27,9 @@ class Student{
     
              System.out.print("Enter the Department of the Student: ");
              objStudent.department = scanner.nextLine();
+
         }
+        //Printing the Student Information
         static void printStudentsBasicInfo(Student objStudent){
 
             System.out.println("Name: "+objStudent.name);
@@ -34,8 +39,8 @@ class Student{
             System.out.println("Depart: "+objStudent.department);
     
     }
-      
-   static void setSubjects(Scanner scanner , Student objStudent){
+    // Getting the Subjects
+   static void getSubjects(Scanner scanner , Student objStudent){
 
         System.out.print("Enter the number of Subjects: ");
         objStudent.numOfSubjects = scanner.nextInt();
@@ -43,38 +48,28 @@ class Student{
         scanner.nextLine();  
 
         String[] subjects = new String[objStudent.numOfSubjects];
-
         for(int i = 0; i < objStudent.numOfSubjects; i++){
 
             System.out.print("Enter the Subject: ");
             subjects[i] = scanner.nextLine();    
         }
-
+        
         System.out.println("The Subjects are: ");
 
         for(String sub : subjects){
             System.out.println(sub);
         }
-        
-    }       
-
+    }    
 }
 public class StudentInfo {
- 
     public static void main(String[] args) {
 
            Scanner scanner = new Scanner(System.in);
            
            Student stu1 = new Student();
-           //Student.getStudentsBasicInfo(scanner,stu1);
-           //Student.printStudentsBasicInfo(stu1);
-           Student.setSubjects(scanner, stu1);
-
-           /* 
-           double tamil,eng,maths,sci,soc,total,average;
-
-            //System.out.print("Enter the number of Students: ");
-            //int numOfstuds = scanner.nextInt();
+           Student.getStudentsBasicInfo(scanner,stu1);
+           Student.printStudentsBasicInfo(stu1);
+           Student.getSubjects(scanner, stu1);
 
             System.out.print("Enter the Mark Scored in Tamil: ");
             tamil = scanner.nextDouble();
@@ -125,7 +120,7 @@ public class StudentInfo {
             System.out.println("Email of the Student: "+email);
             System.out.println("Mobile Number of the Student: "+mobileNum);
             System.out.println("City: "+city);
-            */
+            
 
             scanner.close();
     }
