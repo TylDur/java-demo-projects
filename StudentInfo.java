@@ -7,6 +7,7 @@ class Student{
             int roll , age , numOfSubjects;
             double tamil,eng,maths,sci,soc,total,average;
             char gender;
+            String[] subjects;
 
         // Getting the Basic Informations of the student
         public static void getStudentsBasicInfo(Scanner scanner , Student objStudent){
@@ -17,8 +18,12 @@ class Student{
              System.out.print("Enter the Roll number of the Student: ");
              objStudent.roll = scanner.nextInt();
 
+             scanner.nextLine();
+
              System.out.print("Enter the Age of the Student: ");
              objStudent.age = scanner.nextInt();
+
+             scanner.nextLine();
 
              System.out.print("Enter the Gender of the Student: ");
              objStudent.gender = scanner.next().charAt(0);
@@ -29,6 +34,7 @@ class Student{
              objStudent.department = scanner.nextLine();
 
         }
+
         //Printing the Student Information
         static void printStudentsBasicInfo(Student objStudent){
 
@@ -39,6 +45,7 @@ class Student{
             System.out.println("Depart: "+objStudent.department);
     
     }
+
     // Getting the Subjects
    static void getSubjects(Scanner scanner , Student objStudent){
 
@@ -47,19 +54,26 @@ class Student{
 
         scanner.nextLine();  
 
-        String[] subjects = new String[objStudent.numOfSubjects];
+        objStudent.subjects = new String[objStudent.numOfSubjects];
+        
         for(int i = 0; i < objStudent.numOfSubjects; i++){
 
             System.out.print("Enter the Subject: ");
-            subjects[i] = scanner.nextLine();    
+            objStudent.subjects[i] = scanner.nextLine();    
         }
         
+        //Printing the Subjects
         System.out.println("The Subjects are: ");
+        for(String sub : objStudent.subjects){
 
-        for(String sub : subjects){
             System.out.println(sub);
         }
-    }    
+    } 
+    void getMarks(Scanner scanner,Student objStudent)  {
+        for(int i = 0; i < objStudent.numOfSubjects;i++){
+            
+        }
+    } 
 }
 public class StudentInfo {
     public static void main(String[] args) {
@@ -67,44 +81,10 @@ public class StudentInfo {
            Scanner scanner = new Scanner(System.in);
            
            Student stu1 = new Student();
+
            Student.getStudentsBasicInfo(scanner,stu1);
            Student.printStudentsBasicInfo(stu1);
            Student.getSubjects(scanner, stu1);
-
-            System.out.print("Enter the Mark Scored in Tamil: ");
-            tamil = scanner.nextDouble();
-
-            System.out.print("Enter the Mark Scored in English: ");
-            eng = scanner.nextDouble();
-
-            System.out.print("Enter the Mark Scored in Maths: ");
-            maths = scanner.nextDouble();
-
-            System.out.print("Enter the Mark Scored in Science: ");
-            sci = scanner.nextDouble();
-
-            System.out.print("Enter the Mark Scored in Social: ");
-            soc = scanner.nextDouble();
-
-
-            System.out.println("Mark Scored in Tamil: "+tamil);
-            System.out.println("Mark Scored in English: "+eng);
-            System.out.println("Mark Scored in Maths: "+maths);
-            System.out.println("Mark Scored in Science: "+sci);
-            System.out.println("Mark Scored in Social: "+soc);
-
-            total = tamil+eng+maths+sci+soc;
-            average = total / 5;
-
-            System.out.println("Total Marks: "+total);
-            System.out.println("Average: "+average);
-
-            if(average >= 50){
-                System.out.println("Pass");
-            }
-            else{
-                System.out.println("Fail");
-            }
             
             System.out.print("Enter the Email Id of the Student: ");
             String email = scanner.next();
