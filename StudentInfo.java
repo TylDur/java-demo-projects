@@ -14,18 +14,18 @@ class Student{
         // Getting the Basic Informations of the student
         public static void getStudentsBasicInfo(Scanner scanner , Student objStudent){
 
-             System.out.print("Enter the Name of the Student: ");
-             objStudent.name = scanner.nextLine();
+            System.out.print("Enter the Name of the Student: ");
+            objStudent.name = scanner.nextLine();
 
-             System.out.print("Enter the Roll number of the Student: ");
-             objStudent.roll = scanner.nextLong();
+            System.out.print("Enter the Roll number of the Student: ");
+            objStudent.roll = scanner.nextLong();
 
-             scanner.nextLine();
+            scanner.nextLine();
 
-             System.out.print("Enter the Age of the Student: ");
-             objStudent.age = scanner.nextInt();
+            System.out.print("Enter the Age of the Student: ");
+            objStudent.age = scanner.nextInt();
 
-             scanner.nextLine();
+            scanner.nextLine();
 
             System.out.print("Enter the Email Id of the Student: ");
             objStudent.email = scanner.next();
@@ -40,13 +40,13 @@ class Student{
             System.out.print("Enter the City name of the Student: ");
             objStudent.city = scanner.nextLine();
 
-             System.out.print("Enter the Gender of the Student: ");
-             objStudent.gender = scanner.next().charAt(0);
+            System.out.print("Enter the Gender of the Student: ");
+            objStudent.gender = scanner.next().charAt(0);
 
-             scanner.nextLine();
+            scanner.nextLine();
     
-             System.out.print("Enter the Department of the Student: ");
-             objStudent.department = scanner.nextLine();
+            System.out.print("Enter the Department of the Student: ");
+            objStudent.department = scanner.nextLine();
 
         }
 
@@ -63,10 +63,10 @@ class Student{
             System.out.println("Depart: "+objStudent.department);
 
     
-    }
+        }
 
-    // Getting the Subjects
-   static void getSubjects(Scanner scanner , Student objStudent){
+        // Getting the Subjects
+        static void getSubjects(Scanner scanner , Student objStudent){
 
         System.out.print("Enter the number of Subjects: ");
         objStudent.numOfSubjects = scanner.nextInt();
@@ -79,8 +79,8 @@ class Student{
 
             System.out.print("Enter the Subject: ");
             objStudent.subjects[i] = scanner.nextLine();    
-        }       
-    } 
+         }       
+      } 
 
     static void printSubjects(Student objStudent){
 
