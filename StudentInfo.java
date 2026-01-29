@@ -61,8 +61,6 @@ class Student{
             System.out.println("City: "+objStudent.city);
             System.out.println("Gender: "+objStudent.gender);
             System.out.println("Depart: "+objStudent.department);
-
-    
     }
 
     // Getting the Subjects
