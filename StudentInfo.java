@@ -61,6 +61,7 @@ class Student{
             System.out.println("Mobile Number of the Student: "+objStudent.mobileNum);
             System.out.println("City: "+objStudent.city);
             System.out.println("Gender: "+objStudent.gender);
+
             System.out.println("Department: "+objStudent.department);
     
         }
