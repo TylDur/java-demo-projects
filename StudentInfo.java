@@ -1,4 +1,5 @@
 // Mini Project: Student Information & Marks Processing System
+
 import java.util.Scanner;
 
 class Student{
@@ -6,7 +7,7 @@ class Student{
             String name , department , email , city;
             long roll ,  mobileNum;  
             int age , numOfSubjects ;
-            double total ,  average;
+            double total , average;
             char gender;
             String[] subjects;
             double subjectMarks[];
@@ -60,8 +61,7 @@ class Student{
             System.out.println("Mobile Number of the Student: "+objStudent.mobileNum);
             System.out.println("City: "+objStudent.city);
             System.out.println("Gender: "+objStudent.gender);
-            System.out.println("Depart: "+objStudent.department);
-
+            System.out.println("Department: "+objStudent.department);
     
         }
 
