@@ -14,132 +14,131 @@ class Student{
             double subjectMarks[];
 
         // Getting the Basic Informations of the student
-         void getStudentsBasicInfo(Scanner scanner , Student objStudent){
+         void getStudentsBasicInfo(Scanner scanner){
 
             System.out.print("Enter the Name of the Student: ");
-            objStudent.name = scanner.nextLine();
+            name = scanner.nextLine();
 
             System.out.print("Enter the Roll Number of the Student: ");
-            objStudent.roll = scanner.nextLong();
+            roll = scanner.nextLong();
 
             scanner.nextLine();
 
             System.out.print("Enter the Age of the Student: ");
-            objStudent.age = scanner.nextInt();
+            age = scanner.nextInt();
 
             scanner.nextLine();
 
             System.out.print("Enter the Email Id of the Student: ");
-            objStudent.email = scanner.next();
+            email = scanner.next();
 
             scanner.nextLine();
 
             System.out.print("Enter the Mobile Number of the Student: ");
-            objStudent.mobileNum = scanner.nextLong();
+            mobileNum = scanner.nextLong();
 
             scanner.nextLine();
 
             System.out.print("Enter the City Name of the Student: ");
-            objStudent.city = scanner.nextLine();
+            city = scanner.nextLine();
 
             System.out.print("Enter the Gender of the Student: ");
-            objStudent.gender = scanner.next().charAt(0);
+            gender = scanner.next().charAt(0);
 
             scanner.nextLine();
     
             System.out.print("Enter the Department of the Student: ");
-            objStudent.department = scanner.nextLine();
+            department = scanner.nextLine();
 
         }
 
         //Printing the Student Information
-         void printStudentsBasicInfo(Student objStudent){
+         void printStudentsBasicInfo(){
 
-            System.out.println("Name: "+objStudent.name);
-            System.out.println("Roll: "+objStudent.roll);
-            System.out.println("Age: "+objStudent.age);
-            System.out.println("Email of the Student: "+objStudent.email);
-            System.out.println("Mobile Number of the Student: "+objStudent.mobileNum);
-            System.out.println("City: "+objStudent.city);
-            System.out.println("Gender: "+objStudent.gender);
-
-            System.out.println("Department: "+objStudent.department);
+            System.out.println("Name: "+name);
+            System.out.println("Roll: "+roll);
+            System.out.println("Age: "+age);
+            System.out.println("Email of the Student: "+email);
+            System.out.println("Mobile Number of the Student: "+mobileNum);
+            System.out.println("City: "+city);
+            System.out.println("Gender: "+gender);
+            System.out.println("Department: "+department);
     
         }
 
         // Getting the Subjects
-        void getSubjects(Scanner scanner , Student objStudent){
+        void getSubjects(Scanner scanner){
 
         System.out.print("Enter the number of Subjects: ");
-        objStudent.numOfSubjects = scanner.nextInt();
+        numOfSubjects = scanner.nextInt();
 
         scanner.nextLine();  
 
-        objStudent.subjects = new String[objStudent.numOfSubjects];
+        subjects = new String[numOfSubjects];
         
-        for(int i = 0; i < objStudent.numOfSubjects; i++){
+        for(int i = 0; i < numOfSubjects; i++){
 
             System.out.print("Enter the Subject: ");
-            objStudent.subjects[i] = scanner.nextLine();    
+            subjects[i] = scanner.nextLine();    
          }       
       } 
         // Printing Subjects
-        void printSubjects(Student objStudent){
+        void printSubjects(){
 
         System.out.println("The Subjects are: ");
-        for(String sub : objStudent.subjects){
+        for(String sub : subjects){
 
             System.out.println(sub);
         }
          
     }
         // Getting Marks 
-        void getMarks(Scanner scanner,Student objStudent)  {
+        void getMarks(Scanner scanner)  {
 
-        objStudent.subjectMarks = new double[objStudent.numOfSubjects];
+        subjectMarks = new double[numOfSubjects];
 
-        objStudent.total = 0;
+        total = 0;
 
-        for(int i = 0; i < objStudent.numOfSubjects;i++){
-            System.out.print("Enter the marks for "+objStudent.subjects[i]+" :"); 
-            objStudent.subjectMarks[i] = scanner.nextDouble();      
-            objStudent.total +=objStudent.subjectMarks[i];
-             objStudent.average = objStudent.total / objStudent.numOfSubjects;     
+        for(int i = 0; i < numOfSubjects;i++){
+            System.out.print("Enter the marks for "+subjects[i]+" :"); 
+            subjectMarks[i] = scanner.nextDouble();      
+            total += subjectMarks[i];
+             average = total / numOfSubjects;     
 
         }
     }
-        void calculateGrade(Student objStudent){
+        void calculateGrade(){
             
-            if(objStudent.average >= 90){
-                objStudent.grade = 'O';
+            if(average >= 90){
+                grade = 'O';
             }
-            else if(objStudent.average >= 80){
-                objStudent.grade = 'A';
+            else if(average >= 80){
+                grade = 'A';
             }
-            else if(objStudent.average >= 70){
-                objStudent.grade = 'B';
+            else if(average >= 70){
+                grade = 'B';
             }
-            else if(objStudent.average >= 60){
-                objStudent.grade = 'C';
+            else if(average >= 60){
+                grade = 'C';
             }
-            else if(objStudent.average >= 50){
-                objStudent.grade = 'D';
+            else if(average >= 50){
+                grade = 'D';
             }
             else{
-                objStudent.grade = 'U';
+                grade = 'U';
             }
 
         }
 
         // Printing Marks
-        void printMarks(Student objStudent){
+        void printMarks(){
 
-        for(int i = 0; i < objStudent.numOfSubjects;i++){
-            System.out.println("Marks scored in " + objStudent.subjects[i]+ " : "+objStudent.subjectMarks[i]);
+        for(int i = 0; i < numOfSubjects;i++){
+            System.out.println("Marks scored in " + subjects[i]+ " : "+subjectMarks[i]);
         }
-        System.out.println("Total Marks Scored: "+objStudent.total);
-        System.out.printf("Average: %.2f%n",objStudent.average);
-        System.out.println("Grade: "+objStudent.grade);
+        System.out.println("Total Marks Scored: "+total);
+        System.out.printf("Average: %.2f%n",average);
+        System.out.println("Grade: "+grade);
 
     }
         
@@ -155,11 +154,11 @@ public class StudentInfo {
 
         //    student1.getStudentsBasicInfo(scanner,student1);
         //    student1.printStudentsBasicInfo(student1);
-           student1.getSubjects(scanner, student1);
-           student1.printSubjects(student1);
-           student1.getMarks(scanner,student1);
-           student1.calculateGrade(student1);
-           student1.printMarks(student1);
+           student1.getSubjects(scanner);
+           student1.printSubjects();
+           student1.getMarks(scanner);
+           student1.calculateGrade();
+           student1.printMarks();
            
                    
             scanner.close();
