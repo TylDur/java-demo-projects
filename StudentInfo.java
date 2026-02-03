@@ -18,7 +18,7 @@ class Student{
             System.out.print("Enter the Name of the Student: ");
             objStudent.name = scanner.nextLine();
 
-            System.out.print("Enter the Roll number of the Student: ");
+            System.out.print("Enter the Roll Number of the Student: ");
             objStudent.roll = scanner.nextLong();
 
             scanner.nextLine();
@@ -33,12 +33,12 @@ class Student{
 
             scanner.nextLine();
 
-            System.out.print("Enter the Mobile of the Student: ");
+            System.out.print("Enter the Mobile Number of the Student: ");
             objStudent.mobileNum = scanner.nextLong();
 
             scanner.nextLine();
 
-            System.out.print("Enter the City name of the Student: ");
+            System.out.print("Enter the City Name of the Student: ");
             objStudent.city = scanner.nextLine();
 
             System.out.print("Enter the Gender of the Student: ");
@@ -93,20 +93,27 @@ class Student{
         }
          
     }
+    // Getting Marks 
     static void getMarks(Scanner scanner,Student objStudent)  {
 
         objStudent.subjectMarks = new double[objStudent.numOfSubjects];
 
         for(int i = 0; i < objStudent.numOfSubjects;i++){
             System.out.print("Enter the marks for "+objStudent.subjects[i]+" :"); 
-            objStudent.subjectMarks[i] = scanner.nextDouble();          
+            objStudent.subjectMarks[i] = scanner.nextDouble();      
+            objStudent.total +=objStudent.subjectMarks[i];    
         }
+        
+        objStudent.average = objStudent.total / objStudent.numOfSubjects; 
     } 
+    // Printing Marks
     static void printMarks(Student objStudent){
 
         for(int i = 0; i < objStudent.numOfSubjects;i++){
             System.out.println("Marks scored in " + objStudent.subjects[i]+ " : "+objStudent.subjectMarks[i]);
         }
+        System.out.println("Total Marks Scored: "+objStudent.total);
+        System.out.printf("Average: %.2f%n",objStudent.average);
     }
 }
 public class StudentInfo {
@@ -116,8 +123,8 @@ public class StudentInfo {
            
            Student stu1 = new Student();
 
-           Student.getStudentsBasicInfo(scanner,stu1);
-           Student.printStudentsBasicInfo(stu1);
+        //    Student.getStudentsBasicInfo(scanner,stu1);
+        //    Student.printStudentsBasicInfo(stu1);
            Student.getSubjects(scanner, stu1);
            Student.printSubjects(stu1);
            Student.getMarks(scanner,stu1);
