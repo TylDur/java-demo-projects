@@ -103,9 +103,10 @@ class Student{
             System.out.print("Enter the marks for "+subjects[i]+" :"); 
             subjectMarks[i] = scanner.nextDouble();      
             total += subjectMarks[i];
-             average = total / numOfSubjects;     
+             
 
         }
+        average = total / numOfSubjects;     
     }
         void calculateGrade(){
             
@@ -152,8 +153,8 @@ public class StudentInfo {
            
            Student student1 = new Student();
 
-        //    student1.getStudentsBasicInfo(scanner,student1);
-        //    student1.printStudentsBasicInfo(student1);
+            student1.getStudentsBasicInfo(scanner);
+            student1.printStudentsBasicInfo();
            student1.getSubjects(scanner);
            student1.printSubjects();
            student1.getMarks(scanner);
