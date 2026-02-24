@@ -1,3 +1,2 @@
 # java-demo-projects
-Demo projects for Java learning and for Tracking the progress
-
+Demo projects for Java learning 
