@@ -82,6 +82,7 @@ class Student{
             subjects[i] = scanner.nextLine();    
          }       
       } 
+            
         // Printing Subjects
         void printSubjects(){
 
