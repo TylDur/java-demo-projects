@@ -155,7 +155,7 @@ public class StudentInfo {
            Student student1 = new Student();
 
             student1.getStudentsBasicInfo(scanner);
-            student1.printStudentsBasicInfo();
+           student1.printStudentsBasicInfo();
            student1.getSubjects(scanner);
            student1.printSubjects();
            student1.getMarks(scanner);
