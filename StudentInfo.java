@@ -8,8 +8,8 @@ class Student{
             long roll ,  mobileNum;  
             int age , numOfSubjects ;
             double total , average;
-            char gender;
-            char grade;
+            char gender , grade;
+        
             String[] subjects;
             double subjectMarks[];
 
@@ -56,7 +56,7 @@ class Student{
          void printStudentsBasicInfo(){
 
             System.out.println("Name: "+name);
-            System.out.println("Roll: "+roll);
+            System.out.println("Roll Number: "+roll);
             System.out.println("Age: "+age);
             System.out.println("Email of the Student: "+email);
             System.out.println("Mobile Number of the Student: "+mobileNum);
@@ -155,11 +155,11 @@ public class StudentInfo {
 
             student1.getStudentsBasicInfo(scanner);
             student1.printStudentsBasicInfo();
-           student1.getSubjects(scanner);
-           student1.printSubjects();
-           student1.getMarks(scanner);
-           student1.calculateGrade();
-           student1.printMarks();
+            student1.getSubjects(scanner);
+            student1.printSubjects();
+            student1.getMarks(scanner);
+            student1.calculateGrade();
+            student1.printMarks();
            
                    
             scanner.close();
