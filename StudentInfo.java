@@ -82,6 +82,7 @@ class Student{
             subjects[i] = scanner.nextLine();    
          }       
       } 
+            
         // Printing Subjects
         void printSubjects(){
 
@@ -153,6 +154,7 @@ public class StudentInfo {
            
            Student student1 = new Student();
 
+<<<<<<< HEAD
             student1.getStudentsBasicInfo(scanner);
             student1.printStudentsBasicInfo();
             student1.getSubjects(scanner);
@@ -160,6 +162,15 @@ public class StudentInfo {
             student1.getMarks(scanner);
             student1.calculateGrade();
             student1.printMarks();
+=======
+           //student1.getStudentsBasicInfo(scanner);
+           //student1.printStudentsBasicInfo();
+           student1.getSubjects(scanner);
+           student1.printSubjects();
+           student1.getMarks(scanner);
+           student1.calculateGrade();
+           student1.printMarks();
+>>>>>>> fc8cc4d044370c6b1ccdccba238f729d83f1d161
            
                    
             scanner.close();
